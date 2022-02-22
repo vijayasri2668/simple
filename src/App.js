@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React,{useState} from 'react'
+import './App.css'
+const para = {
+  
+    color:'white',
+    margin:'20px',
+    
+   
 }
 
-export default App;
+function App ()  {
+ const [show,setShow]=useState(false)
+
+  return (
+    <div className='body'>
+    
+    <button onClick={() => setShow(!show)} className='box1'>This is Functional Component</button>
+     {show?<div className='clscomp'>
+       <h1>This Is Created Using Functional Component -- with external css</h1>
+       <h1 style={para}>This is done by using inline css</h1>
+       </div> : null}
+      
+    </div>
+  )
+}
+
+export default App
